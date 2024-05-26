@@ -203,8 +203,8 @@ namespace MCON_368_Final
                 check_amount = (check_input.Value);
                 tip_amount = (tip_input.Value)/100;
 
-                tip = (check_amount * tip_amount);
-                total_and_tip = tip + check_amount;
+                tip = Math.Round((check_amount * tip_amount),2);
+                total_and_tip = Math.Round(tip + check_amount,2);
 
                 tip_result.Text = "$" + Convert.ToString(tip);
                 total_result.Text = "$" + Convert.ToString(total_and_tip);
@@ -217,7 +217,7 @@ namespace MCON_368_Final
             divide_amount = splitting_input.Value;
             if(divide_amount != 0)
             {
-                individual_total = total_and_tip / divide_amount;
+                individual_total = Math.Round((total_and_tip / divide_amount),2);
             } else
             {
                 individual_total = total_and_tip;
